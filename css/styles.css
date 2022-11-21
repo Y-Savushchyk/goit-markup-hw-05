@@ -421,6 +421,7 @@ p {
   display: flex;
 }
 .activity > .container > .list > .item {
+  position: relative;
   margin-right: 30px;
 }
 .activity > .container > .list > .item:last-child {
@@ -436,6 +437,25 @@ p {
   line-height: 1.17;
   text-align: center;
   letter-spacing: 0.03em;
+}
+.activity-text {
+  padding-top: 27px;
+  padding-bottom: 27px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(47, 48, 58, 0.8);
+}
+.text {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+
+  color: #ffffff;
 }
 /*наша команда*/
 .team .container {
