@@ -383,8 +383,9 @@ p {
   background-color: rgba(0, 0, 0, 0.2);
 }
 .backdrop.is-hidden {
-  opacity: 0;
+  opacity: 1;
   pointer-events: none;
+  visibility: hidden;
 }
 .modal {
   position: absolute;
