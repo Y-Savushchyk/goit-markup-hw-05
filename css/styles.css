@@ -14,7 +14,9 @@ html {
   --accent-color: #2196f3;
   --primary-white-color: #ffffff;
   --ptimary-dark-bg-color: #2f303a;
-  --prymary-buttonbg-color: #f5f4fa;
+  --primary-buttonbg-color: #f5f4fa;
+  --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  --primary-duration: 250ms;
 }
 body {
   color: var(--primary-text-color);
@@ -105,6 +107,9 @@ img {
 }
 
 .site-nav .link {
+  position: relative;
+  padding-top: 32px;
+  padding-bottom: 32px;
   text-decoration: none;
   color: var(--primary-title-color);
   font-weight: 500;
@@ -112,9 +117,33 @@ img {
   line-height: 1.14;
   letter-spacing: 0.02em;
   transition-property: color;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: var(--primary-duration);
+  transition-timing-function: var(--timing-function);
 }
+.nav-link:after {
+  content: '';
+
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+
+  display: block;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background-color: var(--accent-color);
+
+  opacity: 0;
+  transform: scale(0, 1);
+  transition-duration: var(--primary-duration);
+  transition-timing-function: var(--timing-function);
+}
+.nav-link:hover::after,
+.active::after {
+  opacity: 1;
+  transform: scale(1, 1);
+}
+
 .site-nav .link:hover,
 .site-nav .link:focus {
   color: var(--accent-color);
@@ -144,8 +173,8 @@ img {
   letter-spacing: 0.02em;
   fill: var(--primary-text-color);
   transition-property: color, fill;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: var(--primary-duration);
+  transition-timing-function: var(--timing-function);
 }
 
 .contacts .link:hover,
@@ -163,8 +192,6 @@ img {
   margin-right: 10px;
 }
 /*стили fotter*/
-.footer-page.container {
-}
 
 footer {
   background-color: var(--ptimary-dark-bg-color);
@@ -204,8 +231,8 @@ footer .logo {
   text-decoration: none;
   color: rgba(255, 255, 255, 0.6);
   transition-property: color;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: var(--primary-duration);
+  transition-timing-function: var(--timing-function);
 }
 .address .link:hover,
 .address .link:focus {
@@ -234,8 +261,8 @@ footer .logo {
   background-color: rgba(255, 255, 255, 0.1);
   fill: var(--primary-white-color);
   transition-property: background-color, fill;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: var(--primary-duration);
+  transition-timing-function: var(--timing-function);
 }
 .social-icon {
   margin: auto;
@@ -283,7 +310,7 @@ p {
 
   font-family: 'Roboto';
   color: var(--primary-title-color);
-  background-color: var(--prymary-buttonbg-color);
+  background-color: var(--primary-buttonbg-color);
   border-radius: 4px;
   font-weight: 500;
   font-size: 16px;
@@ -293,12 +320,11 @@ p {
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
   transition-property: color, background-color, box-shadow;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: var(--primary-duration);
+  transition-timing-function: var(--timing-function);
 }
 .project-nav .filter:hover,
 .project-nav .filter:focus {
-  /*тут нужно уточнить делать ли увелечение падинга при фокусе*/
   padding: 6px 22px;
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
@@ -330,8 +356,8 @@ p {
   padding-bottom: 20px;
   text-align: left;
   transition-property: box-shadow;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: var(--primary-duration);
+  transition-timing-function: var(--timing-function);
 }
 
 .card-set .title {
@@ -400,11 +426,10 @@ p {
   background-color: rgba(0, 0, 0, 0.2);
   opacity: 1;
   visibility: visible;
-  transform: scale(1);
 }
 
 .backdrop.is-hidden {
-  opacity: 1;
+  opacity: 0;
   pointer-events: none;
   visibility: hidden;
 }
@@ -435,8 +460,8 @@ p {
   border: 1px solid rgba(0, 0, 0, 0.1);
   fill: black;
   transition-property: border-color, fill;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: var(--primary-duration);
+  transition-timing-function: var(--timing-function);
 }
 .btn-close:hover,
 .btn-close:focus {
@@ -473,11 +498,9 @@ p {
 .benefits > .container > .list > .item:last-child {
   margin-right: 0px;
 }
-.benefits-item {
-  /*outline: 1px solid red;*/
-}
+
 .icon-box {
-  background-color: var(--prymary-buttonbg-color);
+  background-color: var(--primary-buttonbg-color);
   width: 270px;
   height: 120px;
   margin-bottom: 30px;
@@ -553,8 +576,6 @@ p {
   line-height: 1.18;
   letter-spacing: 0.03em;
 }
-.team > .container > .card-set > .card-item {
-}
 .team .team-title {
   margin-bottom: 50px;
 
@@ -609,8 +630,8 @@ p {
   /*outline: 1px solid red;*/
   fill: #afb1b8;
   transition-property: background-color, fill;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: var(--primary-duration);
+  transition-timing-function: var(--timing-function);
 }
 .social-icon {
   margin: auto;
@@ -662,8 +683,8 @@ p {
   background-color: #fff;
   padding: 16px 32px;
   transition-property: color, border-color;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: var(--primary-duration);
+  transition-timing-function: var(--timing-function);
 }
 .client-icon {
   fill: currentColor;
