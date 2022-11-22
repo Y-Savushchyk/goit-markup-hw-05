@@ -114,6 +114,9 @@ img {
 }
 .site-nav .link:hover,
 .site-nav .link:focus {
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
   color: var(--accent-color);
 }
 .contacts {
@@ -144,6 +147,9 @@ img {
 
 .contacts .link:hover,
 .contacts .link:focus {
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
   color: var(--accent-color);
   fill: var(--accent-color);
 }
@@ -200,6 +206,9 @@ footer .logo {
 }
 .address .link:hover,
 .address .link:focus {
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
   color: var(--accent-color);
 }
 .flex {
@@ -231,6 +240,9 @@ footer .logo {
 }
 .socail-link:hover,
 .socail-link:focus {
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
   background-color: var(--accent-color);
   fill: var(--primary-white-color);
 }
@@ -282,6 +294,9 @@ p {
 }
 .project-nav .filter:hover,
 .project-nav .filter:focus {
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
   /*тут нужно уточнить делать ли увелечение падинга при фокусе*/
   padding: 6px 22px;
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
@@ -324,6 +339,9 @@ p {
 }
 .card:hover,
 .card:focus {
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 /*главная страница*/
@@ -371,19 +389,20 @@ p {
   align-items: center;
   letter-spacing: 0.06em;
 }
-.hero .order:hover,
-.hero .order:focus {
-}
 .backdrop {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  bottom: 0;
+  right: 0;
   background-color: rgba(0, 0, 0, 0.2);
-}
-.backdrop.is-hidden {
   opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
   pointer-events: none;
   visibility: hidden;
 }
@@ -416,6 +435,8 @@ p {
 }
 .btn-close:hover,
 .btn-close:focus {
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   border-color: var(--accent-color);
   fill: var(--accent-color);
 }
@@ -591,6 +612,9 @@ p {
 }
 .socail-link:hover,
 .socail-link:focus {
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
   background-color: var(--accent-color);
   fill: var(--primary-white-color);
 }
@@ -640,6 +664,9 @@ p {
 }
 .client-link:hover,
 .client-link:focus {
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
   color: var(--accent-color);
 
   border-color: var(--accent-color);
